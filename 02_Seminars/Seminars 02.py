@@ -46,25 +46,54 @@
 
 # Каждое число – среднесуточная температура в соответствующий день. Температуры – целые числа и лежат в диапазоне от –50 до 50
 
-max_count = 0
-count = 0
-n = int(input('Введите количество дней: ')) # количество дней
-for _ in range(n): # запрос ввода температуры столько раз сколько дней
-    temp = int(input('Введите температуру: '))
-    if temp > 0:
-        count += 1
+# max_count = 0
+# count = 0
+# n = int(input('Введите количество дней: ')) # количество дней
+# for _ in range(n): # запрос ввода температуры столько раз сколько дней
+#     temp = int(input('Введите температуру: '))
+#     if temp > 0:
+#         count += 1
+#     else:
+#         if count > max_count:
+#             max_count = count
+#         count = 0
+# if max_count == 0 and count != 0:
+#     print(count)
+# else:
+#     print(max_count)
+
+from random import randint
+
+max_count = tmp_count = 0
+n = int(input('Введите количество дней: '))
+lst = list(randint(-50, 50) for i in range(n))
+print(lst)
+for e in lst:
+    if e > 0:
+        tmp_count += 1
+        if max_count < tmp_count:
+            max_count = tmp_count
     else:
-        if count > max_count:
-            max_count = count
-        count = 0
-if max_count == 0 and count != 0:
-    print(count)
-else:
-    print(max_count)
+        tmp_count = 0
 
+print(max_count)
 
-# Задача 4. 
+# Задача 4.
 #  Иван Васильевич пришел на рынок и решил купить два арбуза: один для себя, а другой для тещи. Понятно, что для себя нужно выбрать арбуз потяжелей, 
 #  а для тещи полегче. Но вот незадача: арбузов слишком много и он не знает как же выбрать самый легкий и самый тяжелый арбуз? Помогите ему!
 # Пользователь вводит одно число N – количество арбузов. Вторая строка содержит N чисел, записанных на новой строчке каждое. Здесь каждое число – 
 # это масса соответствующего арбуза. Все числа натуральные и не превышают 30000.
+
+from random import randint
+n = int(input('Введите количество арбузов: '))
+lst = list(randint(10000, 30000) for i in range(n))
+print(lst)
+max_sebe = 0
+min_teshi = lst[0]
+for e in lst:
+    if e > max_sebe:
+        max_sebe = e
+for e in lst:
+    if e < min_teshi:
+        min_teshi = e
+print (f'Себе = {max_sebe}, Тещи = {min_teshi}')
