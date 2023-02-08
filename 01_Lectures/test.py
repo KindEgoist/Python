@@ -740,9 +740,55 @@
 #     return y ** x
 # print(degree(4))
 
-def message(number):
-    def print_message():
-        return 'Число ' + str(number)
-    return print_message()
-print(message(78))
+# def message(number):
+#     def print_message():
+#         return 'Число ' + str(number)
+#     return print_message()
+# print(message(78))
+#---------------------
+#Необязательные параметры команды print
+# print('a', 'b', 'c', sep='*') #a*b*c
+# print('d', 'e', 'f', sep='**') #d**e**f sep команды print() позволяет установить строку, с помощью которой будут разделены аргументы при печати.
+
+# print('a', 'b', 'c', end='@')
+# print('d', 'e', 'f', end='@@') #результат обоих принтов a b c@d e f@@
+
+# print('a', 'b', 'c', sep='*', end='finish')
+# print('d', 'e', 'f', sep='**', end='^__^')
+# print('g', 'h', 'i', sep='+', end='%')
+# print('j', 'k', 'l', sep='-', end='#')
+# print('m', 'n', 'o', sep='/', end='!') #результат a*b*cfinishd**e**f^__^g+h+i%j-k-l#m/n/o!
+
+# Примечания
+# Примечание 1. Вызов команды print() с пустыми скобками ставит перевод строки.
+
+# Примечание 2. Последовательность символов \n называется управляющей последовательностью и задает перевод строки.
+
+# Примечание 3. Значения по умолчанию у параметров sep и end следующие:
+
+# sep=' '   # пробел
+# end='\n'  # перевод строки
+# Примечание 4. Чтобы убрать все дополнительные выводимые символы, можно вызывать командуprint() так:
+
+# print('a', 'b', 'c', sep='', end='')
+# Примечание 5. Программный код
+
+# print('Python')
+# равнозначен коду
+
+# print('Python', end='\n')
+#  Примечание 6. Если после вывода данных нужно более одного перевода строки, то необходимо использовать следующий код:
+
+# print('Python', end='\n\n\n')
+
+# print('a', 'b', 'c', sep='*')
+# print('d', 'e', 'f', sep='**', end='')
+# print('g', 'h', 'i', sep='+', end='%')
+# print('j', 'k', 'l', sep='-', end='\n')
+# print('m', 'n', 'o', sep='/', end='!')
+# print('p', 'q', 'r', sep='1', end='%')
+# print('s', 't', 'u', sep='&', end='\n')
+# print('v', 'w', 'x', sep='%')
+# print('y', 'z', sep='/', end='!')
+
 
